@@ -1,0 +1,16 @@
+<button (click)="onToggleDetails()">Click Here </button>
+
+<p> When you click here you will reveal a secret message. </p> 
+<p *ngIf = showPassword> pshhhhh you thought
+  <div
+  *ngFor = "let logItem of log; let i = index" 
+  [ngStyle]= "{backgroundColor: i <= 5 ? 'blue' : 'transparent' } "
+  [ngClass] = "{'white-text' : i>=5 } ">
+  {{ logItem }} 
+  </div>
+
+<p appBasicHighlight> Style me with basic Directive </p>
+
+<p appBetter> Rendering Practice:  Not a good practice to directly access the element like "appBasicHighlight".  You should use the renderer.  
+
+This is a better approach because sometimes you may not have access to the DOM and would get an error.  The renderer does not access the DOM </p>
